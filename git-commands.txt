@@ -1,0 +1,33 @@
+https://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@github.com/Mahihecker/learning-devops.git
+
+#to install git on linux
+sudo apt-get install git
+
+#get the info about the git or git commands
+git
+
+#initiaize empty git repository 
+git init
+
+#show which files are untracked and modified files
+git status
+
+#what are the exact changes that are made among the files
+git diff
+
+#add the file to be tracked
+git add <filename>
+#add all
+git add .
+
+#to commit the changes in the modified file 
+git add <filename>
+git commit -m "message"
+
+#to see all commits
+git log
+
+#to come to the previous version
+1)copy the id of the commit from the git log
+git reset --hard <id>
+
