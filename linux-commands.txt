@@ -1,0 +1,235 @@
+#creates an empty file or updates the timestamp of an existing file.
+touch <filename>
+
+#list files and directories in the current working directory
+ls
+#for hidden files too
+ls -la
+#details about file
+ls -ltr
+
+# to print the current working directory on your terminal
+pwd
+
+#chnage directory 
+cd <directory path>
+#move out of directory
+cd ..
+#move two path out
+cd ../.. 
+
+#to create directories from within the terminal
+mkdir <folder name>
+
+#copy the file
+cp <source> <destination>
+
+#Stream editor for filtering and transforming text(Replaces occurrences of old with new in file.txt)
+sed 's/old/new/g' file.txt
+
+#move the file
+mv <source> <destination>
+
+#rename the file (copy and move to the same directory)
+cp <source> <destination1>
+mv <source> <destination1> 
+
+#remove a file
+rm <file name>
+
+#remove a directory
+rm -r <folder/directory name>
+
+#ask for permission before deleting
+rm -ri <folder/directory name>
+
+#remove the directory and the files in it
+rm -rf <folder/directory name>
+
+#Pattern scanning and processing language(Prints the first column of each line in file.txt)
+awk '{print $1}' file.txt
+
+#To create a link to another file (ln makes hard links and ln -s makes soft links)
+ln -s <source path> <link name>
+
+#clears the terminal screen
+clear
+
+# output the contents of a file or print anything to the terminal output
+cat <file name>
+echo <Text to print on terminal>
+
+#when the output printed by any command is larger than the screen space and needs scrolling.
+cat <filename/path>  | less
+#Use the -S flag with less to enable line wrapping. This will allow you to view long lines of text without scrolling horizontally.Use the -N flag with less to display line numbers. This can be useful when you need to know the line number of a specific piece of text.
+cat <filename/path>  | less -SN
+
+#to create and open file
+vi <filename>
+
+
+#view manual 
+man
+#of specific command
+man <command>
+
+#displays information about the system’s kernel, including the kernel name, hostname, kernel release, kernel version, and machine hardware name (-a stands for all)
+uname -a
+
+# the current user’s username. It stands for “who am I?” 
+whoami
+
+#create and extract archived files(To create an archive, we use the -c parameter, and to extract an archive, we use the -x parameter)
+tar -cvf <archive name> <files separated by space>
+tar -xvf <archive name>
+
+zip <archive name> <file names separated by space>
+unzip <archive name>
+
+#search for specific patterns or strings in one or more files and filter the output of other commands
+<Any command with output> | grep "<string to find>"
+<Any command with output> | grep 1
+
+#display the beginning or end of a file
+head <file name>
+tail <file name>
+
+#compare two files
+diff <file 1> <file 2>
+cmp <file 1> <file 2>
+comm <file 1> <file2>
+
+# sort lines in a text file or standard input (To sort numbers in numerical order, you can use the -n)( sort lines based on specific fields using the -k option)
+sort <filename>
+sort -n file.txt
+sort -k 2 file.txt
+
+#to set environment variables. Environment variables are used to store information that can be used by processes or commands
+export <variable name>=<value>
+
+#establishes a secure shell connection to a remote server
+ssh username@remote-server
+
+#Securely copy files between hosts over SSH(Copies file.txt to /path/to/destination on the remote host.)
+scp file.txt user@remotehost:/path/to/destination
+
+#s used to manage system services, which are long-running processes that are started at boot time and run in the background is used to start, stop, restart, and check the status of these services
+service ssh status
+service ssh stop
+service ssh start
+
+#to display information about the current running processes on the system
+ps -ef
+#Display a list of all processes for a specific process ID (PID)
+ps -p PID
+
+#kill a process
+ps 
+kill <process ID>
+killall <process name>
+
+# display the amount of disk space used and available on the file systems( df will give us the data in bytes, which is not readable. So, we’ll use the -h parameter to make the data human-readable)
+df -h
+#Estimate file and directory space usage(total size in human readable form)
+du -sh /path/to/dir
+
+#Lists all partitions and their details
+sudo fdisk -l
+
+#display memory usage
+free
+#Shows memory usage in megabytes
+free -m
+
+#it means that we’ll connect the device to a folder so we can access the files from our filesystem ( Usually, a mountable device is found inside the /dev folder. mnt is the destination folder to which to mount the device. You can change it to any folder you want, but we have used /mnt as it’s the system’s default folder for mounting devices)
+mount /dev/cdrom /mnt
+
+# to change the permissions of a file or directory (parameter [rootpermisiions,group,your permissions] 4-read 2-wrirte 1-execute 7-allpermissions)
+chmod <parameter> filename
+chmod 777 filename
+
+#to change the ownership of a file or directory
+chown <user:group> filename
+#i.e chown root:root loop.sh
+
+sudo apt install net-tools
+#to manage network interfaces
+ifconfig
+#chcek if connected or not
+ping
+
+sudo apt install inetutils-traceroute 
+#to trace the route of network packets and determine the path they take to reach a specific destination(hops)(the IP address, hostname, or domain name of the endpoint)
+traceroute <destination address>
+
+
+#to download a file from within the terminal(When you specify the link for download, it has to directly be a link to the file. If the file cannot be accessed by the wget command, it will simply download the webpage in HTML format instead of the actual file that you wanted)(The -c argument allows us to resume an interrupted download)
+wget <link to file>
+wget -c <link to file>
+
+# to manage firewalls
+iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+ufw allow 80
+
+#package managers
+apt install <package name>
+
+#run command as equivalent to logging in as root
+sudo <command you want to run>
+
+
+sudo apt install ncal
+#displays a well-presented calendar on the terminal
+cal
+
+#a command that you run very often, it’s time to create an alias
+alias lsl="ls -l"
+
+#It stands for “data-description” or “data definition,” and it can be used to copy and convert data between different file formats and storage devices.(if and of arguments stand for input file and output file)
+dd if=/dev/sdb of=/dev/sda
+
+# locates the binary, source, and manual pages for a specific command or program
+whereis sudo
+
+#gives us an explanation of what a command actually is
+whatis sudo
+
+#a system monitoring tool that displays real-time information about system processes and resource usage
+top
+#similar to top but with a more user-friendly interface
+htop
+
+#report cpu nd i/o statics
+iostat
+
+#Monitor I/O usage by processes (requires root)
+sudo iotop
+
+#Shows active network connections and listening ports(-t tcp ports)(-u UDP ports)(-L listening ports)(-n sjow numerical address instead of resolving hostname)
+netstat -tuln
+
+#to check if the port is open on the remote machine
+telnet remoteip port
+
+#Sort processes by memory usage
+top -o MEM
+#Display detailed information about a specific process
+top -p PID
+#display single summary screen of system resource usage
+top -n 1
+
+# to create a new user in Linux
+useradd <username> -d <directory>
+
+# to modify existing users(adding more groups to the user)
+ usermod JournalDev -a -G sudo, audio, MySQL
+
+#to set the password of your own account
+passwd
+#for specific user
+passwd username
+#Force a user to change their password at the next login
+passwd -f username
+#Set an expiration date for a user’s password
+passwd -e -n days -w warndays username
+
