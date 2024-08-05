@@ -233,3 +233,20 @@ passwd -f username
 #Set an expiration date for a user’s password
 passwd -e -n days -w warndays username
 
+#retireve the info from internet
+curl <url>
+
+#to find something
+sudo find / -<name> parameters
+#find everything
+sude find / 
+
+#to trap signals manage the signals(if someone use ^C dont do it)
+trap ^C
+#if someone use ^C trap it and delete all files
+trap "rm -rf * ^C SIGINT
+
+#word count 
+wc 
+#(return number of lines)
+wc -l
