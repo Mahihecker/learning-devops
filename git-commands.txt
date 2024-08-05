@@ -1,10 +1,18 @@
-https://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@github.com/Mahihecker/learning-devops.git
 
 #to install git on linux
 sudo apt-get install git
 
 #get the info about the git or git commands
 git
+
+#comfiguration
+git config --global user.name "name"
+git config --global user.email "eamil"
+#to if configured or not
+git config --global user.name
+git config --global user.email
+#another way 
+git comfig --global --edit
 
 #initiaize empty git repository 
 git init
@@ -20,14 +28,85 @@ git add <filename>
 #add all
 git add .
 
+#setting the remote repo to commit to
+git remote add origin <url>
+#to see the origin
+git remote -v
+
 #to commit the changes in the modified file 
 git add <filename>
 git commit -m "message"
 
+#pushing cahnge sto the remote repo
+git push 
+#forced push
+git push -u origin <remotebranchname-to-pushto>
+
+#to fetch the changes
+git pull
+git pull origin branch
+
 #to see all commits
 git log
 
-#to come to the previous version
-1)copy the id of the commit from the git log
+#to change branch
+git checkout <branch name>
+
+#to get current branch 
+git branch 
+
+#to create new branch
+git branch  <branchname>
+git switch <branchname>
+
+#to create and cahneg to that branch
+git chcekout -b <branchname>
+git switch -c <branchname>
+
+#delete a branch
+git branch -d <branchname>
+
+#if u dont want anything to be added in commits or repo add it in .gitignore file
+.gitignore
+
+#merging branches current to targetbranch
+git merge <targetbranchname>
+
+#to come to the previous version (copy the id of the commit from the git log)
 git reset --hard <id>
+git checkout <commit hashcode>
+
+#rebasing
+git rebase <tragetbranchname>
+#after resolving conflicts to continue rebasing
+git rebase --continue
+#to stopand return to original stage
+git rebase --abort
+
+#squash
+git rebase -i <commit-hash>
+#add last 3 commits to squash
+git rebase -i HEAD-3
+#this will open editor do it by changing pick to squash ,save and close edittor
+#then push changes
+git push origin <branchname>
+
+#stashing
+git stash
+git stash list
+#taskes most recent stadh and apply thoes changes ,keeping the stash 
+git stash apply
+#to apply changes and delete it from stash
+git stash pop
+#drop/delete a stash
+git stash drop stash@{index}
+
+#tagging and releasing
+git tag <name>
+git tag -a <tagname> -m "message"
+git push origin <tagname>
+#push all tags
+git push origin --tags
+#view tags
+git tag
 
