@@ -39,8 +39,10 @@ git commit -m "message"
 
 #pushing cahnge sto the remote repo
 git push 
-#forced push
+#forced push(if loal and remote have same name)
 git push -u origin <remotebranchname-to-pushto>
+#if branches are diff
+git push -u origin <localbranchname>:<remotebranchname>
 
 #to fetch the changes
 git pull
