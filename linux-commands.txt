@@ -70,7 +70,7 @@ vi <filename>
 vim <filename>
 #esc i -to insert
 #esc :wq! -to save and quit
-#esc :q -just to exit and not save
+#esc :q! -just to exit and not save
 
 #view manual 
 man

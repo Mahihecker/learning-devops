@@ -23,6 +23,7 @@
 
 
 #rest of the script and commands
+#can also use any of the if-else statements and for loops can also write the code blah blah
 
 #now before executing the script we must provide the permission by using chmod command
 chmod 777 <filename> #everything allowed 777
