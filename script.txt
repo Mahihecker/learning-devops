@@ -1,0 +1,32 @@
+#shell scripting on linux 
+#extension: .sh
+#shebang = #!
+# diff executers = bash(mostly used),dash,sh(noy anymore linking to bash instead dash),ksh
+
+1)  #!/bin/bash
+
+#now the meta data 
+
+2)  ################################
+    #Author:
+    #date:
+    #version:
+    #description of script:
+    ###############################
+
+
+#set -x debugmode instead of echo seperate the results by printings first which command running
+#set -e exit th escript if ncounter any eroor but dont in case of the pipe only see the pipe last command if its correct it keep executing
+#set -o pipefail for the pipe error to be catched
+
+3)  set -exo pipefail
+
+
+#rest of the script and commands
+
+#now before executing the script we must provide the permission by using chmod command
+chmod 777 <filename> #everything allowed 777
+
+#execute the file
+./filename
+

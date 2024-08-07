@@ -66,7 +66,11 @@ cat <filename/path>  | less -SN
 
 #to create and open file
 vi <filename>
-
+#to open any file
+vim <filename>
+#esc i -to insert
+#esc :wq! -to save and quit
+#esc :q -just to exit and not save
 
 #view manual 
 man
