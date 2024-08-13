@@ -1,0 +1,35 @@
+--create a network 
+docker network create mongo-network
+--list of the network 
+docker network ls
+
+--run the mongodb image from the dockerhub
+docker run -d \
+-p 27017:27017 \
+-e MONGO_INITDB_ROOT_USERNAME=admin \
+-e MONGO_INITDB_ROOT_PASSWORD=supersecret \
+--network mongo-network \
+--name mongodb \
+mongo
+
+--now for mongo experess
+sudo docker run -d \
+  --network mongo-network \
+  --name mongoexpress \
+  -e ME_CONFIG_BASICAUTH_USERNAME=admin \
+  -e ME_CONFIG_BASICAUTH_PASSWORD=supersecret \
+  -e ME_CONFIG_MONGODB_SERVER=mongodb \
+  -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin \
+  -e ME_CONFIG_MONGODB_ADMINPASSWORD=supersecret \
+  -p 8081:8081 \
+  mongo-express
+
+--to see if containers running
+sudo docker ps
+
+--check the url
+curl http://localhost:8081
+
+--restart the container
+sudo docker restart mongodb
+
