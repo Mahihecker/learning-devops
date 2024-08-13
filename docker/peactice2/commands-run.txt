@@ -16,8 +16,6 @@ mongo
 sudo docker run -d \
   --network mongo-network \
   --name mongoexpress \
-  -e ME_CONFIG_BASICAUTH_USERNAME=admin \
-  -e ME_CONFIG_BASICAUTH_PASSWORD=supersecret \
   -e ME_CONFIG_MONGODB_SERVER=mongodb \
   -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin \
   -e ME_CONFIG_MONGODB_ADMINPASSWORD=supersecret \
@@ -33,3 +31,6 @@ curl http://localhost:8081
 --restart the container
 sudo docker restart mongodb
 
+--check the logs
+sudo docker logs mongodb
+sudo docker logs mongoexpress
